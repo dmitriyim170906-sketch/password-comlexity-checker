@@ -1,0 +1,68 @@
+# Файлы окружения (содержат секреты!)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Docker
+.dockerignore  # сам игнорируется Git'ом
+docker-compose.override.yml
+
+# Логи приложения
+*.log
+logs/
+
+# Файлы операционной системы
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE и редакторы кода
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-*
+
+# Временные файлы
+temp/
+tmp/
+*.tmp
+*.temp
+
+# Файлы данных для тестов (если будут)
+test_data/
+sample_data/
+
+# Базы данных (если добавим SQLite позже)
+*.db
+*.sqlite
+*.sqlite3
+
+# Резервные копии
+*.bak
+*.backup
+
+# Файлы специфичные для Windows
+[Tt]humbs.db
+
+# Файлы специфичные для macOS
+__MACOSX/
+
+# Файлы специфичные для Linux
+*~
+
+# Файлы сборки и дистрибуции (уже частично есть, но лучше продублировать)
+build/
+dist/
+*.whl
+*.tar.gz
