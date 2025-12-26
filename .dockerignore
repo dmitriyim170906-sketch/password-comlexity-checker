@@ -1,0 +1,54 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Файлы IDE и редакторов
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Операционные системы
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Git
+.git/
+.gitignore
+
+# Логи
+*.log
+logs/
+
+# Временные файлы
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Резервные копии
+*.bak
+*.backup
+
+# Тестовые данные
+test_data/
+sample_passwords.txt
+
+# Файлы окружения (копируем только .env.example)
+.env
+.env.local
+
+# Файлы сборки и установки
+build/
+dist/
+*.egg-info/

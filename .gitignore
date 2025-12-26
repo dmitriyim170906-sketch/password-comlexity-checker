@@ -1,19 +1,19 @@
-# Файлы окружения (содержат секреты!)
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Виртуальное окружение и кэш Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
 
-# Docker
-.dockerignore  # сам игнорируется Git'ом
-docker-compose.override.yml
+# Файлы IDE и редакторов
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# Логи приложения
-*.log
-logs/
-
-# Файлы операционной системы
+# Операционные системы
 .DS_Store
 .DS_Store?
 ._*
@@ -23,46 +23,33 @@ ehthumbs.db
 Thumbs.db
 desktop.ini
 
-# IDE и редакторы кода
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.project
-.settings/
-*.sublime-*
+# Git
+.git/
+.gitignore
+
+# Логи
+*.log
+logs/
 
 # Временные файлы
-temp/
 tmp/
+temp/
 *.tmp
 *.temp
-
-# Файлы данных для тестов (если будут)
-test_data/
-sample_data/
-
-# Базы данных (если добавим SQLite позже)
-*.db
-*.sqlite
-*.sqlite3
 
 # Резервные копии
 *.bak
 *.backup
 
-# Файлы специфичные для Windows
-[Tt]humbs.db
+# Тестовые данные
+test_data/
+sample_passwords.txt
 
-# Файлы специфичные для macOS
-__MACOSX/
+# Файлы окружения (копируем только .env.example)
+.env
+.env.local
 
-# Файлы специфичные для Linux
-*~
-
-# Файлы сборки и дистрибуции (уже частично есть, но лучше продублировать)
+# Файлы сборки и установки
 build/
 dist/
-*.whl
-*.tar.gz
+*.egg-info/

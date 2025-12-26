@@ -1,0 +1,13 @@
+{
+  "project": "Password Complexity Checker",
+  "date": "2024-01-01",
+  "tests": {
+    "structure": true,
+    "import": true,
+    "cli_tested": false,
+    "pytest_working": false,
+    "docker_build": false
+  },
+  "files_count": 17,
+  "lines_of_code": 603
+}

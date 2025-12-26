@@ -1,0 +1,52 @@
+repos:
+  # Базовые хуки
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace      # Удаляет пробелы в конце строк
+      - id: end-of-file-fixer        # Добавляет пустую строку в конце файла
+      - id: check-yaml               # Проверяет синтаксис YAML
+      - id: check-added-large-files  # Проверяет большие файлы
+      - id: check-merge-conflict     # Проверяет конфликты слияния
+      - id: check-ast                # Проверяет синтаксис Python
+      - id: check-executables-have-shebangs  # Проверяет shebang
+      - id: check-toml               # Проверяет TOML файлы
+      - id: check-json               # Проверяет JSON файлы
+  
+  # Форматирование кода
+  - repo: https://github.com/psf/black
+    rev: 23.12.1
+    hooks:
+      - id: black
+        language_version: python3.11
+  
+  # Сортировка импортов
+  - repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        args: ["--profile", "black"]
+  
+  # Линтинг (быстрый)
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.1.11
+    hooks:
+      - id: ruff
+        args: ["--fix", "--exit-non-zero-on-fix"]
+  
+  # Проверка безопасности
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.7
+    hooks:
+      - id: bandit
+        args: ["-c", "pyproject.toml"]
+        exclude: ^tests/
+  
+  # Проверка типов (опционально, может быть медленно)
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.8.0
+    hooks:
+      - id: mypy
+        args: ["--config-file", "pyproject.toml"]
+        additional_dependencies: [types-all]
+        exclude: ^tests/
