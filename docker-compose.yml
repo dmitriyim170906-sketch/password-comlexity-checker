@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 version: '3.8'
 
 services:
@@ -21,4 +22,29 @@ services:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 30s
       timeout: 10s
+=======
+version: '3.8'
+
+services:
+  password-checker:
+    build: .
+    container_name: password-checker-app
+    ports:
+      - "8000:8000"  # Хост:Контейнер
+    environment:
+      - DEBUG=false
+      - LOG_LEVEL=INFO
+      - MIN_PASSWORD_LENGTH=8
+      - REQUIRE_DIGITS=true
+      - REQUIRE_UPPERCASE=true
+      - REQUIRE_LOWERCASE=true
+      - REQUIRE_SPECIAL_CHARS=true
+    volumes:
+      - ./logs:/app/logs  # Для сохранения логов
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+>>>>>>> 4ce59620b51de28efa36a518268458c4bfcab2ec
       retries: 3
